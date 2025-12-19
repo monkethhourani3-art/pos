@@ -1,0 +1,55 @@
+{
+    "name": "restaurant-pos/system",
+    "description": "Restaurant Point of Sale System built with PHP 8.2",
+    "type": "project",
+    "keywords": ["restaurant", "pos", "point-of-sale", "php", "mysql", "arabic", "rtl"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Restaurant POS Team",
+            "email": "info@restaurant-pos.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "ext-pdo": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-gd": "*",
+        "ext-curl": "*",
+        "vlucas/phpdotenv": "^5.5",
+        "tecnickcom/tcpdf": "^6.6",
+        "monolog/monolog": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "squizlabs/php_codesniffer": "^3.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": [
+            "app/Helpers/functions.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "serve": "php -S localhost:8000 -t public",
+        "install-db": "php scripts/install.php"
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
